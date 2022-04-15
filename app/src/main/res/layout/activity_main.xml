@@ -4,15 +4,170 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_blue"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/Tile_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginTop="23dp"
+        android:text="@string/tic_tac_toe"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@string/game_bored"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Tile_text"
+        app:srcCompat="@drawable/grid"/>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout"
+        android:layout_width="317dp"
+        android:layout_height="304dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!--Gird for images-->
+            <ImageView
+                android:id="@+id/position00"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:onClick="playerTap"
+                android:padding="20sp"
+                android:tag="0" />
+
+            <ImageView
+                android:id="@+id/position01"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:onClick="playerTap"
+                android:padding="20sp"
+                android:tag="1" />
+
+            <ImageView
+                android:id="@+id/position02"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:onClick="playerTap"
+                android:padding="20sp"
+                android:tag="2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!--Gird for images-->
+            <ImageView
+                android:id="@+id/position10"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:onClick="playerTap"
+                android:padding="20sp"
+                android:tag="3" />
+
+            <ImageView
+                android:id="@+id/position11"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:onClick="playerTap"
+                android:padding="20sp"
+                android:tag="4" />
+
+            <ImageView
+                android:id="@+id/position12"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:onClick="playerTap"
+                android:padding="20sp"
+                android:tag="5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!--Gird for images-->
+            <ImageView
+                android:id="@+id/position20"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:onClick="playerTap"
+                android:padding="20sp"
+                android:tag="6"
+                 />
+
+            <ImageView
+                android:id="@+id/position21"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:onClick="playerTap"
+                android:padding="20sp"
+                android:tag="7" />
+
+            <ImageView
+                android:id="@+id/position22"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:onClick="playerTap"
+                android:padding="20sp"
+                android:tag="8" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
+        android:text="@string/new_game"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="gameReset"/>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15sp"
+        android:text="@string/status"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout"
+        app:layout_constraintVertical_bias="0.86" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
